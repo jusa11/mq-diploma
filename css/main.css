@@ -63,7 +63,23 @@ body {
 	margin: 0 auto;
 	/* background-color: antiquewhite; */
 }
+.title {
+	display: block;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #0f0d0e;
+	text-align: center;
+	text-transform: uppercase;
+}
 
+.title::after {
+	content: "";
+	width: 65px;
+	height: 3px;
+	background-color: #e1d9bd;
+	display: block;
+	margin: 10px auto 25px auto;
+}
 .header {
 	background-image: url(../images/banner-bg.jpg);
 	background-repeat: no-repeat;
@@ -499,148 +515,100 @@ body {
 }
 
 
-.trend {
-	margin: 57px 0 0 0;
+
+.trends {
+	margin: 65px 0 0 0;
 }
 
-.title {
-	display: block;
-	font-size: 2rem;
-	font-weight: bold;
-	color: #0f0d0e;
-	text-align: center;
-	text-transform: uppercase;
+.trends-body {
+	margin: 25px 0 0 0;
 }
 
-.title::after {
-	content: "";
-	width: 65px;
-	height: 3px;
-	background-color: #e1d9bd;
-	display: block;
-	margin: 10px auto 25px auto;
-}
-
-.trend-body {}
-
-.trend-row {
+.trends-row {
 	display: flex;
 	margin: 0 -2px;
 }
 
-.trend-column {
+.trends-column {
 	display: flex;
-	flex: 1 1 25%;
-	max-height: 320px;
+	flex: 0 1 25%;
 	padding: 0 2px;
 }
 
-.trend-item {
+.trends-item {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
 }
-
-.trend-item-1 {
+.trends-item-wrap {
+	display: flex;
+	flex-direction: column-reverse;
+	flex: 1 1 auto;
+	position: relative;
+	z-index: 2;
+	padding: 133px 20px 12px 20px;
+	border-top: 2px solid #a5a5a3;
+	border-bottom: 2px solid #a5a5a3;
+}
+.item-wrap-1 {
 	background-image: url(../images/trend1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-	position: relative;
-	z-index: 0;
 }
-
-.trend-item-2 {
+.item-wrap-2 {
 	background-image: url(../images/trend2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-	position: relative;
-	z-index: 0;
 }
-
-.trend-item-3 {
+.item-wrap-3 {
 	background-image: url(../images/trend3.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-	position: relative;
-	z-index: 0;
 }
-
-.trend-item-4 {
+.item-wrap-4 {
 	background-image: url(../images/trend4.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-	position: relative;
-	z-index: 0;
 }
-
-.trend-item-1::after,
-.trend-item-2::after,
-.trend-item-3::after,
-.trend-item-4::after {
+.item-wrap-1::after,
+.item-wrap-2::after,
+.item-wrap-3::after,
+.item-wrap-4::after {
 	content: "";
 	position: absolute;
+	height: 100%;
+	width: 100%;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
 	background-color: rgba(0, 0, 0, 0.6);
-	z-index: -1;
+	z-index: -3;
 }
-
-.trend-item-text {
-	margin: 149px 11px 37px 20px;
-	padding: 9px;
-	border: 3px solid #91844d;
+.trends-item-text {
+	border: 3px solid #7a6b40;
+	padding: 35px 10px 33px 30px;
 }
-
-.trend-item-tags {
+.trends-item-tags {
 	display: flex;
+}
+.trends-tags-list {
+	margin: 0 0 0 20px;
+	font-size: 14px;
 	font-weight: bold;
 	color: #b59f5b;
 	text-transform: uppercase;
 }
-
-.trend-item-list {
-	margin: 0 0 0 20px;
-	font-size: 14px;
-}
-
-.trend-item-list:first-child {
+.trends-tags-list:first-child {
 	margin: 0;
 }
-
-.trend-item-link {
-	position: relative;
-}
-
-.trend-item-link:after {
-	content: "";
-	transition: ease 0.2s;
-}
-
-.trend-item-link:hover:after {
-	content: "";
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	height: 1px;
-	background-color: #b59f5b;
-	display: block;
-	margin: 1px auto 1px auto;
-}
-
-.trend-item-title {
-	color: #ffffff;
-	text-transform: uppercase;
+.trends-item-title {
 	font-size: 2rem;
-	margin: 10px 0 0 0;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #ffffff;
 }
-
 
 
 
@@ -739,8 +707,6 @@ body {
 	font-size: 20px;
 	font-weight: bold;
 }
-
-.goods-button {}
 
 .goods-btn {
 	padding: 15px 28px;
@@ -972,33 +938,13 @@ body {
 	}
 
 	/*  Сейчас в тренде */
-	.trend {
-		margin: 45px 0 0 0;
-	}
-
-	.trend-row {
-		margin: -2px -2px;
+	.trends-row {
 		flex-wrap: wrap;
 	}
-
-	.trend-column {
+	.trends-column {
+		display: block;
 		flex: 1 1 50%;
-		padding: 2px 2px;
 	}
-
-	.trend-item {
-		flex: 1 1 auto;
-	}
-
-	.trend-item-text {
-		margin: 73px 17px 16px 20px;
-		padding: 26px;
-		border: 3px solid #91844d;
-	}
-
-	/* .trend-item-title {
-		font-size: 17px;
-	} */
 
 	/*  /Сейчас в тренде */
 
