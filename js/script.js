@@ -6,8 +6,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-	$('.popup-closed').click(function (event) {
-		$('.popup').toggleClass('close-popup');
-		$('body').toggleClass('lock');
+	$('.popup-close').click(function (event) {
+		$('.popup').toggleClass('popup-off');
 	});
 });
