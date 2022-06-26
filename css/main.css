@@ -51,10 +51,23 @@ html {
 	font-size: 62.5%;
 }
 
+html,
 body {
-	box-sizing: border-box;
 	font-family: "Open Sans", sans-serif;
 	position: relative;
+	height: 100%;
+	width: 100%;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.content {
+	flex: 1 1 auto;
 }
 
 .container {
@@ -63,6 +76,7 @@ body {
 	margin: 0 auto;
 	/* background-color: antiquewhite; */
 }
+
 .title {
 	display: block;
 	font-size: 2rem;
@@ -80,6 +94,7 @@ body {
 	display: block;
 	margin: 10px auto 25px auto;
 }
+
 .header {
 	background-image: url(../images/banner-bg.jpg);
 	background-repeat: no-repeat;
@@ -172,10 +187,6 @@ body {
 	font-weight: bold;
 }
 
-.page-content {
-	overflow: hidden;
-	min-height: 100%;
-}
 .title {
 	display: block;
 	font-size: 2rem;
@@ -537,42 +548,49 @@ body {
 
 .trends-item {
 	display: flex;
-	flex-direction: column;
+	flex: 1 1 auto;
 }
+
 .trends-item-wrap {
 	display: flex;
 	flex-direction: column-reverse;
 	flex: 1 1 auto;
 	position: relative;
 	z-index: 2;
-	padding: 133px 20px 12px 20px;
+	padding: 40% 20px 12px 20px;
 	border-top: 2px solid #a5a5a3;
 	border-bottom: 2px solid #a5a5a3;
+	background-color: #000000;
 }
+
 .item-wrap-1 {
 	background-image: url(../images/trend1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
 }
+
 .item-wrap-2 {
 	background-image: url(../images/trend2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
 }
+
 .item-wrap-3 {
 	background-image: url(../images/trend3.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
 }
+
 .item-wrap-4 {
 	background-image: url(../images/trend4.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
 }
+
 .item-wrap-1::after,
 .item-wrap-2::after,
 .item-wrap-3::after,
@@ -586,13 +604,16 @@ body {
 	background-color: rgba(0, 0, 0, 0.6);
 	z-index: -3;
 }
+
 .trends-item-text {
 	border: 3px solid #7a6b40;
 	padding: 35px 10px 33px 30px;
 }
+
 .trends-item-tags {
 	display: flex;
 }
+
 .trends-tags-list {
 	margin: 0 0 0 20px;
 	font-size: 14px;
@@ -600,14 +621,17 @@ body {
 	color: #b59f5b;
 	text-transform: uppercase;
 }
+
 .trends-tags-list:first-child {
 	margin: 0;
 }
+
 .trends-item-title {
 	font-size: 2rem;
 	font-weight: bold;
 	text-transform: uppercase;
 	color: #ffffff;
+	margin: 10px 0 0 0;
 }
 
 
@@ -640,18 +664,7 @@ body {
 .goods-item-img {
 	overflow: hidden;
 	position: relative;
-	padding: 0 0 70% 0;
-}
-
-.goods-item-img img {
-	max-width: 100%;
-	object-fit: cover;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	z-index: 0;
+	text-align: center;
 }
 
 .goods-item-text {
@@ -938,14 +951,40 @@ body {
 	}
 
 	/*  Сейчас в тренде */
-	.trends-row {
-		flex-wrap: wrap;
+	@media (orientation: portrait) {
+		.trends-row {
+			flex-wrap: wrap;
+			margin: -2px -2px;
+		}
+		.trends-column {
+			flex: 1 1 50%;
+			padding: 2px 2px;
+		}
 	}
-	.trends-column {
-		display: block;
-		flex: 1 1 50%;
+	@media (orientation: landscape) {
+		.trends-row {
+			flex-wrap: wrap;
+			margin: -2px -2px;
+		}
+		.trends-column {
+			flex: 1 1 25%;
+			padding: 2px 2px;
+		}
 	}
-
+	.trends-item-wrap {
+		padding: 26% 2% 5% 2%;
+	}
+	.trends-item-text {
+		border: 2px solid #7a6b40;
+		padding: 30px 4px 30px 4px;
+	}		
+	.trends-tags-list {
+		margin: 0 0 0 6%;
+		font-size: 14px;
+	}
+	.trends-item-title {
+		font-size: 17px;
+	}
 	/*  /Сейчас в тренде */
 
 	/*  Наши изделия */
@@ -967,19 +1006,8 @@ body {
 	.goods-item-img {
 		overflow: hidden;
 		position: relative;
-		padding: 0 0 78% 0;
 	}
 
-	.goods-item-img img {
-		max-width: 100%;
-		object-fit: cover;
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		z-index: 0;
-	}
 
 	.goods-item-text {
 		padding: 29px 0px 23px 0px;
@@ -1185,34 +1213,34 @@ body {
 
 	/*  /aside  */
 
-	/* Сейчас в тренде */
-	.trend {
-		margin: 40px 0 0 0;
+	/*  Сейчас в тренде */
+	@media (orientation: landscape) {
+		.trends-row {
+			flex-wrap: wrap;
+			margin: -1px -1px;
+		}
+		.trends-column {
+			flex: 1 1 50%;
+			padding: 1px 1px;
+		}
 	}
-
-	.trend-row {
-		margin: -2px -2px;
-		flex-wrap: wrap;
+	@media (orientation: portrait) {
+		.trends-row {
+			flex-wrap: wrap;
+			margin: -2px -2px;
+		}
+		.trends-column {
+			flex: 1 1 100%;
+			padding: 2px 2px;
+		}
 	}
-
-	.trend-column {
-		flex: 1 1 100%;
-		padding: 2px 2px;
+	.trends-item-wrap {
+		padding: 28% 3% 3%;
 	}
-
-	.trend-column:first-child {
-		padding: 0;
-	}
-
-	.trend-item-title {
+	.trends-item-title {
 		font-size: 16px;
 	}
-
-	.trend-item-text {
-		margin: 87px 17px 17px 17px;
-		padding: 28px 0 38px 20px;
-		border: 3px solid #91844d;
-	}
+	/*  /Сейчас в тренде */
 
 	/* Наши изделия */
 	.goods {
@@ -1237,18 +1265,6 @@ body {
 	.goods-item-img {
 		overflow: hidden;
 		position: relative;
-		padding: 0 0 102% 0;
-	}
-
-	.goods-item-img img {
-		max-width: 100%;
-		object-fit: cover;
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		z-index: 0;
 	}
 
 	.goods-item-title {
@@ -1285,6 +1301,7 @@ body {
 .popup-off {
 	display: none;
 }
+
 .popup {
 	position: fixed;
 	width: 100%;
@@ -1294,6 +1311,7 @@ body {
 	left: 0;
 	z-index: 20;
 }
+
 .popup-body {
 	min-height: 100%;
 	display: flex;
@@ -1301,6 +1319,7 @@ body {
 	align-items: center;
 	padding: 30px 10px;
 }
+
 .popup-content {
 	margin: 30px 0 0 0;
 	padding: 50px 30px;
@@ -1318,6 +1337,7 @@ body {
 	background-image: url(../images/svg/form-x.svg);
 	background-repeat: no-repeat;
 }
+
 .form-item {
 	margin: 30px 0 0 0;
 }
@@ -1433,4 +1453,5 @@ body {
 	text-transform: uppercase;
 	font-weight: bold;
 }
+
 /* =============================== /popup =========================================================================*/
