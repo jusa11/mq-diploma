@@ -883,7 +883,7 @@ body {
 	transition: ease 0.2s;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background-image: url(/images/svg/form-arrows.svg);
+	background-image: url(../images/svg/form-arrows.svg);
 	background-size: 0.7em;
 	background-repeat: no-repeat;
 	background-position: center right 14px;
@@ -929,14 +929,14 @@ body {
 	vertical-align: middle;
 	width: 20px;
 	height: 20px;
-	background-image: url(/images/svg/form-empty-circle.svg);
+	background-image: url(../images/svg/form-empty-circle.svg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 20px;
 }
 
 .item-radio:checked~.form-radio-text::before {
-	background-image: url(/images/svg/form-circle.svg);
+	background-image: url(../images/svg/form-circle.svg);
 	transition: ease 0.9s;
 }
 
